@@ -219,6 +219,7 @@ def big_shoe_rebounds
               big_shoe = home_or_away_hash[:players].max_by do |player_key|
                 player_key[:shoe]
                 rebounds = player_key[:rebounds]
+                binding.pry
               end
             end
                         binding.pry
