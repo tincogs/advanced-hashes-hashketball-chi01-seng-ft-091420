@@ -176,7 +176,7 @@ end
 
 def team_names
     teams = []
-    game_hash.each do ||home_or_away, home_or_away_hash|
+    game_hash.each do |home_or_away, home_or_away_hash|
         teams.push(home_or_away_hash[:team_name])
     end
     teams
