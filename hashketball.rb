@@ -183,3 +183,15 @@ def team_names
 end
 
 
+def player_numbers(team)
+    numbers = []
+        game_hash.each do |home_or_away, home_or_away_hash|
+            home_or_away_hash.each do |team_key, team_data|
+                if team_data == team
+                numbers.push()
+                end
+                binding.pry
+            end
+        end
+    numbers
+end
