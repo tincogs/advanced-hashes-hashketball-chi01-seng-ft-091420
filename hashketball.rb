@@ -189,7 +189,7 @@ def player_numbers(team)
             home_or_away_hash.each do |team_key, team_data|
                 if team_data == team
                 home_or_away_hash[:players].each do |player_key, player_data|
-                numbers.push(player_key[:number]
+                numbers.push(player_key[:number])
                 end
                 end
                 binding.pry
