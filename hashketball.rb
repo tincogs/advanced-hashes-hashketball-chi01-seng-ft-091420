@@ -211,7 +211,6 @@ def player_stats(player)
         end
     end
 end
-max_score = students.max_by do |h| h[:test_score] [:test_score]
 
 def big_shoe_rebounds
     rebounds = 0
