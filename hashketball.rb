@@ -214,15 +214,14 @@ end
 
 def big_shoe_rebounds
     rebounds = 0
-      game_hash.each do |home_or_away, home_or_away_hash|
-          home_or_away_hash.each do |team_key|
-            rebounds =  home_or_away_hash[:players].max_by do |player_key|
+        game_hash.each do |home_or_away, home_or_away_hash|
+            home_or_away_hash.each do |team_key|
+                home_or_away_hash[:players].max_by do |player_key|
                 player_key[:shoe]
-                player_key[:rebounds]
+                rebounds = player_key[:rebounds]
               end
             end
                         binding.pry
-          end
         end
     rebounds
 end 
