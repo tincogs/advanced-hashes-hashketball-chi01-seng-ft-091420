@@ -1,3 +1,4 @@
+require "pry"
 # Write your code below game_hash
 def game_hash
   {
@@ -126,4 +127,101 @@ def game_hash
   }
 end
 
-# Write code here
+def num_points_scored(player)
+    points_scored = 0
+      game_hash.each do |home_or_away, home_or_away_hash|
+          home_or_away_hash.each do |team_key, team_data|
+            if team_key == :players
+              team_data.each do |player_key,player_data|
+                if player_key[:player_name] == player
+                  points_scored = player_key[:points]
+                end
+              end
+            end
+          end
+        end
+    points_scored
+end
+
+
+def shoe_size(player)
+    size = 0
+      game_hash.each do |home_or_away, home_or_away_hash|
+          home_or_away_hash.each do |team_key, team_data|
+            if team_key == :players
+              team_data.each do |player_key,player_data|
+                if player_key[:player_name] == player
+                  size = player_key[:shoe]
+                end
+              end
+            end
+          end
+        end
+    size
+end 
+
+
+def team_colors(team)
+    uniforms = []
+        game_hash.each do |home_or_away, home_or_away_hash|
+            home_or_away_hash.each do |team_key, team_data|
+                if team_data == team
+                uniforms = home_or_away_hash[:colors]
+                end
+            end
+        end
+    uniforms
+end
+
+
+def team_names
+    teams = []
+    game_hash.each do |home_or_away, home_or_away_hash|
+        teams.push(home_or_away_hash[:team_name])
+    end
+    teams
+end
+
+
+def player_numbers(team)
+    numbers = []
+        game_hash.each do |home_or_away, home_or_away_hash|
+            home_or_away_hash.each do |team_key, team_data|
+                if team_data == team
+                home_or_away_hash[:players].each do |player_key, player_data|
+                numbers.push(player_key[:number])
+                end
+                end
+            end
+        end
+    numbers
+end
+
+
+def player_stats(player)
+    game_hash.each do |home_or_away, home_or_away_hash|
+        home_or_away_hash.each do |team_key, team_data|
+          if team_key == :players
+            team_data.each do |player_key,player_data|
+              if player_key[:player_name] == player
+              return player_key
+              end
+            end
+          end
+        end
+    end
+end
+
+def big_shoe_rebounds
+    rebounds = 0
+        game_hash.each do |home_or_away, home_or_away_hash|
+            home_or_away_hash.each do |team_key|
+              big_shoe = home_or_away_hash[:players].max_by do |player_key|
+                player_key[:shoe]
+              end
+              [:shoe]
+              rebounds = big_shoe[:rebounds]
+              return rebounds
+            end
+        end
+end 
