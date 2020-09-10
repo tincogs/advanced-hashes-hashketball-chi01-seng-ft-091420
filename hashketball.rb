@@ -192,7 +192,6 @@ def player_numbers(team)
                 numbers.push(player_key[:number])
                 end
                 end
-                binding.pry
             end
         end
     numbers
