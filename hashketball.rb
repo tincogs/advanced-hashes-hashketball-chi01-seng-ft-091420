@@ -220,11 +220,8 @@ def big_shoe_rebounds
                 player_key[:shoe]
               end
               [:shoe]
-              binding.pry
-                rebounds = player_key[:rebounds]
-                binding.pry
+                rebounds = big_shoe[:rebounds]
               end
             end
-                        binding.pry
     rebounds
 end 
