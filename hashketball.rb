@@ -204,7 +204,7 @@ def player_stats(player)
             if team_key == :players
               team_data.each do |player_key,player_data|
                 if player_key[:player_name] == player
-                player_key
+                return player_key
                 end
               end
             end
