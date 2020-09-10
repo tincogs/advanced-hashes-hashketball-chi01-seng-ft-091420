@@ -211,14 +211,16 @@ def player_stats(player)
         end
     end
 end
-
+max_score = students.max_by do |h| h[:test_score] [:test_score]
 
 def big_shoe_rebounds
     rebounds = 0
       game_hash.each do |home_or_away, home_or_away_hash|
           home_or_away_hash.each do |team_key, team_data|
             if team_key == :players
-              team_data.each do |player_key,player_data|
+            rebounds =  team_data.max_by do |player_key,player_data|
+                player_key[:shoe]
+                player_key[:rebounds]
             binding.pry
               end
             end
