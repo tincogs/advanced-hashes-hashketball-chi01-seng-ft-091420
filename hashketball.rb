@@ -211,3 +211,18 @@ def player_stats(player)
         end
     end
 end
+
+
+def big_shoe_rebounds
+    rebounds = 0
+      game_hash.each do |home_or_away, home_or_away_hash|
+          home_or_away_hash.each do |team_key, team_data|
+            if team_key == :players
+              team_data.each do |player_key,player_data|
+            binding.pry
+              end
+            end
+          end
+        end
+    rebounds
+end 
